@@ -41,7 +41,8 @@ class ListItemView: UIView {
         if let styling = styling {
             label.frame.size.width = frame.size.width - styling.bulletViewSize.width
             label.frame.origin.x = styling.bulletViewSize.width
-            bullet?.frame = CGRect(x: 0, y: 0, width: styling.bulletViewSize.width, height: styling.bulletViewSize.height)
+            let yOffset: CGFloat = 1.5 // Hack to align the bullet label with the lineSpacing of the main label
+            bullet?.frame = CGRect(x: 0, y: yOffset, width: styling.bulletViewSize.width, height: styling.bulletViewSize.height)
         } else {
             label.frame.size.width = frame.size.width
         }
